@@ -33,6 +33,31 @@ PORT=8080
 
 `API Endpoint: http://localhost:8080`
  
+## Data Structure
+
+#### Course Quiz
+```
+    {
+        "id": 1,
+        "name": "PRN292"
+    }
+```
+
+#### Question Quiz
+```
+    {
+        "id": 1,
+        "question": "Which variables can use only by one user but in all pages?",
+        "answerA": "Session",
+        "answerB": "Application",
+        "answerC": "ViewState",
+        "answerD": "Cookie",
+        "correctAnswer": "Session",
+        "point": 1,
+        "courseId": 1
+    },
+```
+
 ## API
 
 #### /api/course-quiz
