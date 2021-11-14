@@ -21,5 +21,5 @@ func main() {
 		return
 	}
 
-	_ = r.Run(":%s", os.Getenv("PORT"))
+	_ = r.Run(":" + os.Getenv("PORT"))
 }
