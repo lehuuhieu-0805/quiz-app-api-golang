@@ -13,7 +13,6 @@ Clone project and install dependencies
 ```
 git clone https://github.com/lehuuhieu-1011/quiz-app-api-golang.git
 cd quiz-app-api-golang
-go mod download
 ```
 
 ## Usage
