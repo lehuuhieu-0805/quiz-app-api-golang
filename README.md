@@ -30,6 +30,8 @@ PORT=8080
 
 ### Run the application
 > go run main.go
+
+`API Endpoint: http://localhost:8080`
  
 ## API
 
