@@ -76,28 +76,28 @@ func Route(r *gin.Engine) {
 			})
 		}
 
-		dataQuiz := api.Group("/data-quiz")
+		questionQuiz := api.Group("/question-quiz")
 		{
-			service := services.NewDataQuizService()
-			controller := controllers.NewDataQuizController(service)
+			service := services.NewQuestionQuizService()
+			controller := controllers.NewQuestionQuizController(service)
 
-			dataQuiz.GET("/", func(c *gin.Context) {
+			questionQuiz.GET("/", func(c *gin.Context) {
 				c.JSON(http.StatusOK, controller.GetAllData())
 			})
 
-			dataQuiz.GET("/:id", func(c *gin.Context) {
+			questionQuiz.GET("/:id", func(c *gin.Context) {
 				id, _ := strconv.Atoi(c.Param("id"))
-				data, err := controller.GetById(id)
+				question, err := controller.GetById(id)
 				if err != nil {
 					c.JSON(http.StatusNotFound, gin.H{
 						"message": err.Error(),
 					})
 					return
 				}
-				c.JSON(http.StatusOK, data)
+				c.JSON(http.StatusOK, question)
 			})
 
-			dataQuiz.PUT("/:id", func(c *gin.Context) {
+			questionQuiz.PUT("/:id", func(c *gin.Context) {
 				id, _ := strconv.Atoi(c.Param("id"))
 				err := controller.UpdateData(id, c)
 				if err != nil {
@@ -111,18 +111,18 @@ func Route(r *gin.Engine) {
 				})
 			})
 
-			dataQuiz.POST("", func(c *gin.Context) {
-				data, err := controller.AddData(c)
+			questionQuiz.POST("", func(c *gin.Context) {
+				question, err := controller.AddData(c)
 				if err != nil {
 					c.JSON(http.StatusBadRequest, gin.H{
 						"message": err.Error(),
 					})
 					return
 				}
-				c.JSON(http.StatusCreated, data)
+				c.JSON(http.StatusCreated, question)
 			})
 
-			dataQuiz.DELETE("/:id", func(c *gin.Context) {
+			questionQuiz.DELETE("/:id", func(c *gin.Context) {
 				id, _ := strconv.Atoi(c.Param("id"))
 				err := controller.DeleteData(id)
 				if err != nil {

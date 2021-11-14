@@ -41,10 +41,10 @@ PORT=8080
 - `PUT`: Update a course
 - `DELETE`: Delete a course
 
-#### /api/data-quiz
-- `GET`: Get all data of quiz
-- `POST`: Add new data of quiz
-#### /api/data-quiz/:id
-- `GET`: Get a data of quiz
-- `PUT`: Update a data of quiz
-- `DELETE`: Delete a data of quiz
+#### /api/question-quiz
+- `GET`: Get all question of quiz
+- `POST`: Add new question of quiz
+#### /api/question-quiz/:id
+- `GET`: Get a question of quiz
+- `PUT`: Update a question of quiz
+- `DELETE`: Delete a question of quiz

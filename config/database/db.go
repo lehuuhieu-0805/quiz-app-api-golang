@@ -36,7 +36,7 @@ func Connect() error {
 	}
 
 	// auto migrate
-	if err = DB.AutoMigrate(&models.CourseQuiz{}, &models.DataQuiz{}); err != nil {
+	if err = DB.AutoMigrate(&models.CourseQuiz{}, &models.QuestionQuiz{}); err != nil {
 		return err
 	}
 

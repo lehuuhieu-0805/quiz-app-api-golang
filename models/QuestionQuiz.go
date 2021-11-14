@@ -1,6 +1,6 @@
 package models
 
-type DataQuiz struct {
+type QuestionQuiz struct {
 	Id            int     `json:"id" gorm:"primaryKey"`
 	Question      string  `json:"question"`
 	AnswerA       string  `json:"answerA"`
@@ -12,6 +12,6 @@ type DataQuiz struct {
 	CourseId      int     `json:"courseId"`
 }
 
-func (DataQuiz) TableName() string {
-	return "data_quiz"
+func (QuestionQuiz) TableName() string {
+	return "question_quiz"
 }
