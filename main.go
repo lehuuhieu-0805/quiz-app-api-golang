@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	"os"
@@ -13,6 +14,9 @@ func main() {
 	_ = godotenv.Load()
 
 	r := gin.Default()
+
+	// enable cors
+	r.Use(cors.Default())
 
 	routes.Route(r)
 
